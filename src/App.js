@@ -20,17 +20,44 @@ const columnsInitial = [
     {
         name: 'progress',
         color: 'primary',
-        tasks: []
+        tasks: [
+            {
+                id: 3,
+                name: 'todo3'
+            },
+            {
+                id: 4,
+                name: 'todo4'
+            }
+        ]
     },
     {
         name: 'review',
         color: 'warning',
-        tasks: []
+        tasks: [
+            {
+                id: 5,
+                name: 'todo5'
+            },
+            {
+                id: 6,
+                name: 'todo6'
+            }
+        ]
     },
     {
         name: 'done',
         color: 'success',
-        tasks: []
+        tasks: [
+            {
+                id: 7,
+                name: 'todo7'
+            },
+            {
+                id: 8,
+                name: 'todo8'
+            }
+        ]
     }
 ];
 
