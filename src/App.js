@@ -69,6 +69,19 @@ function App() {
       const reranged  = columns.map( col => {
           if (col.name === arg.columnName){
               const tasks = col.tasks;
+              //     [...col.tasks,
+              //
+              //     {
+              //         id: 18,
+              //         name: 'todo18'
+              //     },
+              //     {
+              //         id: 9,
+              //         name: 'todo19'
+              //     }
+              //
+              // ];
+
               return { ...col, tasks};
           }else return col;
           }
@@ -114,3 +127,4 @@ function App() {
 }
 
 export default App;
+
