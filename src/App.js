@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import uuidv4 from '/package';
 
 const columnsInitial = [
     {
@@ -9,11 +8,11 @@ const columnsInitial = [
         color: 'secondary',
         tasks: [
             {
-                id: uuidv4(),
+                id: 1,
                 name: 'todo1'
             },
             {
-                id: uuidv4(),
+                id: 2,
                 name: 'todo2'
             }
         ]
@@ -23,11 +22,11 @@ const columnsInitial = [
         color: 'primary',
         tasks: [
             {
-                id: uuidv4(),
+                id: 3,
                 name: 'todo3'
             },
             {
-                id: uuidv4(),
+                id: 4,
                 name: 'todo4'
             }
         ]
@@ -37,11 +36,11 @@ const columnsInitial = [
         color: 'warning',
         tasks: [
             {
-                id: uuidv4(),
+                id: 5,
                 name: 'todo5'
             },
             {
-                id: uuidv4(),
+                id: 6,
                 name: 'todo6'
             }
         ]
@@ -51,11 +50,11 @@ const columnsInitial = [
         color: 'success',
         tasks: [
             {
-                id: uuidv4(),
+                id: 7,
                 name: 'todo7'
             },
             {
-                id: uuidv4(),
+                id: 8,
                 name: 'todo8'
             }
         ]
@@ -156,36 +155,38 @@ function App() {
         </div>
     );
 
-    const swapUp(arr_, id){
-        let si = arr.findIndex(el => el.id === id);
-
-        if(si <= 0) return arr;
-
-        const prev = arr[si - 1];
-        const curr = arr[si];
-
-        arr[si] = prev;
-        arr[si - 1] = curr;
-
-        return arr;
-    };
-    const swapDown(arr_, id){
-        const arr = [...arr_];
-
-        let si = arr.findIndex(el => el.id === id);
-
-        if(si < 0 || si === arr.length - 1) return arr;
-
-        const next = arr[si + 1];
-        const curr = arr[si];
-
-        arr[si] = next;
-        arr[si + 1] = curr;
-
-        return arr;
-    };
-
 }
 
 export default App;
+
+function swapUp(arr_, id){
+    const arr = [...arr_];
+
+    let si = arr.findIndex(el => el.id === id);
+
+    if(si <= 0) return arr;
+
+    const prev = arr[si - 1];
+    const curr = arr[si];
+
+    arr[si] = prev;
+    arr[si - 1] = curr;
+
+    return arr_;
+};
+function swapDown(arr_, id){
+    const arr = [...arr_];
+
+    let si = arr.findIndex(el => el.id === id);
+
+    if(si < 0 || si === arr.length - 1) return arr;
+
+    const next = arr[si + 1];
+    const curr = arr[si];
+
+    arr[si] = next;
+    arr[si + 1] = curr;
+
+    return arr;
+};
 
